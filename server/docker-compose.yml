@@ -1,0 +1,21 @@
+version: '3.7'
+
+services:
+  postgres:
+    image: bitnami/postgresql:13.16.0
+    container_name: inorbit-server
+    ports:
+      - '5432:5432'
+    environment:
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=inorbit
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+    deploy:
+      resources:
+        limits:
+          cpus: '1.0'
+          memory: 512M
+volumes:
+  pgdata:
