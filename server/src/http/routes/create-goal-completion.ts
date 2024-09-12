@@ -4,7 +4,7 @@ import z from 'zod'
 import { createGoal } from '../../functions/create-goal'
 import { createGoalCompletion } from '../../functions/create-goal-completion'
 
-export async function goalCompletionRoute(app: FastifyInstance) {
+export async function createGoalCompletionRoute(app: FastifyInstance) {
   app.withTypeProvider<ZodTypeProvider>().post(
     '/completions',
     {
