@@ -1,7 +1,13 @@
+import { Dialog } from './components/ui/dialog'
+
+import { CreateGoal } from './components/create-goal'
+import { EmptyGoals } from './components/empty-goals'
+
 export function App() {
   return (
-    <div>
-      <h1>Home</h1>
-    </div>
+    <Dialog>
+      <EmptyGoals />
+      <CreateGoal />
+    </Dialog>
   )
 }
